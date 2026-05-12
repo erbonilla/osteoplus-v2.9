@@ -26,6 +26,9 @@
 .DS_Store
 *.pem
 
+# accidental nested clone/copy at repo root (same name as project folder)
+/osteoplus-v2.9/
+
 # debug
 npm-debug.log*
 yarn-debug.log*
