@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Osteóplus — Colors</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin:0; padding:0; background:#fff; }
+  .stage { width: 880px; padding: 40px 48px; box-sizing: border-box; }
+  h2 { margin: 0 0 24px; font-family: var(--font-display); font-size: 26px; color: var(--slate-900); }
+  h3 { margin: 28px 0 12px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--slate-500); font-weight: 600; font-family: var(--font-body); }
+  .ramp { display: grid; grid-template-columns: repeat(11, 1fr); gap: 6px; }
+  .ramp .s {
+    height: 68px; border-radius: var(--radius-md);
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 6px 8px;
+    font-family: var(--font-body); font-size: 10px; font-weight: 600;
+    border: 1px solid rgba(0,0,0,0.04);
+  }
+  .ramp .s .n { opacity: .7; font-weight: 500; font-size: 9px; }
+  .feedback { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 8px; }
+  .f-card { border-radius: var(--radius-lg); padding: 14px 16px; border: 1px solid transparent; }
+  .f-card .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: 8px; vertical-align: middle; }
+  .f-card .t { font-size: 13px; font-weight: 600; color: var(--slate-900); }
+  .f-card .v { font-size: 11px; color: var(--slate-600); margin-top: 4px; font-family: var(--font-mono); }
+</style>
+</head>
+<body>
+<div class="stage">
+  <h2>Color system</h2>
+
+  <h3>Primary · Teal — Brand</h3>
+  <div class="ramp" style="grid-template-columns: repeat(11, 1fr);">
+    <div class="s" style="background:var(--teal-50); color:var(--slate-800);">50<div class="n">F0FDFA</div></div>
+    <div class="s" style="background:var(--teal-100); color:var(--slate-800);">100<div class="n">CCFBF1</div></div>
+    <div class="s" style="background:var(--teal-200); color:var(--slate-800);">200<div class="n">99F6E4</div></div>
+    <div class="s" style="background:var(--teal-300); color:var(--slate-800);">300<div class="n">5EEAD4</div></div>
+    <div class="s" style="background:var(--teal-400); color:#fff;">400<div class="n">2DD4BF</div></div>
+    <div class="s" style="background:var(--teal-500); color:#fff;">500<div class="n">14B8A6</div></div>
+    <div class="s" style="background:var(--teal-600); color:#fff; outline: 2px solid var(--teal-900); outline-offset: 2px;">600★<div class="n">0D9488</div></div>
+    <div class="s" style="background:var(--teal-700); color:#fff;">700<div class="n">0F766E</div></div>
+    <div class="s" style="background:var(--teal-800); color:#fff;">800<div class="n">115E59</div></div>
+    <div class="s" style="background:var(--teal-900); color:#fff;">900<div class="n">134E4A</div></div>
+    <div class="s" style="background:var(--teal-950); color:#fff;">950<div class="n">042F2E</div></div>
+  </div>
+
+  <h3>Accent · Orange — Used sparingly for gamification &amp; warmth</h3>
+  <div class="ramp">
+    <div class="s" style="background:var(--orange-50); color:var(--slate-800);">50<div class="n">FFF7ED</div></div>
+    <div class="s" style="background:var(--orange-100); color:var(--slate-800);">100<div class="n">FFEDD5</div></div>
+    <div class="s" style="background:var(--orange-200); color:var(--slate-800);">200<div class="n">FED7AA</div></div>
+    <div class="s" style="background:var(--orange-300); color:var(--slate-800);">300<div class="n">FDBA74</div></div>
+    <div class="s" style="background:var(--orange-400); color:#fff;">400<div class="n">FB923C</div></div>
+    <div class="s" style="background:var(--orange-500); color:#fff; outline: 2px solid var(--orange-800); outline-offset: 2px;">500★<div class="n">FF6B00</div></div>
+    <div class="s" style="background:var(--orange-600); color:#fff;">600<div class="n">EA580C</div></div>
+    <div class="s" style="background:var(--orange-700); color:#fff;">700<div class="n">C2410C</div></div>
+    <div class="s" style="background:var(--orange-800); color:#fff;">800<div class="n">9A3412</div></div>
+    <div class="s" style="background:var(--orange-900); color:#fff;">900<div class="n">7C2D12</div></div>
+    <div class="s" style="background:var(--orange-950); color:#fff;">950<div class="n">431407</div></div>
+  </div>
+
+  <h3>Neutral · Slate — Cool-toned workhorse</h3>
+  <div class="ramp">
+    <div class="s" style="background:var(--slate-50); color:var(--slate-800); border-color: var(--slate-200);">50<div class="n">F8FAFC</div></div>
+    <div class="s" style="background:var(--slate-100); color:var(--slate-800);">100<div class="n">F1F5F9</div></div>
+    <div class="s" style="background:var(--slate-200); color:var(--slate-800);">200<div class="n">E2E8F0</div></div>
+    <div class="s" style="background:var(--slate-300); color:var(--slate-800);">300<div class="n">CBD5E1</div></div>
+    <div class="s" style="background:var(--slate-400); color:#fff;">400<div class="n">94A3B8</div></div>
+    <div class="s" style="background:var(--slate-500); color:#fff;">500<div class="n">64748B</div></div>
+    <div class="s" style="background:var(--slate-600); color:#fff;">600<div class="n">475569</div></div>
+    <div class="s" style="background:var(--slate-700); color:#fff;">700<div class="n">334155</div></div>
+    <div class="s" style="background:var(--slate-800); color:#fff;">800<div class="n">1E293B</div></div>
+    <div class="s" style="background:var(--slate-900); color:#fff;">900<div class="n">0F172A</div></div>
+    <div class="s" style="background:var(--slate-950); color:#fff;">950<div class="n">020617</div></div>
+  </div>
+
+  <h3>Feedback</h3>
+  <div class="feedback">
+    <div class="f-card" style="background: var(--success-subtle); border-color: rgba(22,163,74,0.2);">
+      <div><span class="dot" style="background:var(--success-base)"></span><span class="t">Success</span></div>
+      <div class="v">#16A34A · #F0FDF4</div>
+    </div>
+    <div class="f-card" style="background: var(--warning-subtle); border-color: rgba(217,119,6,0.2);">
+      <div><span class="dot" style="background:var(--warning-base)"></span><span class="t">Warning</span></div>
+      <div class="v">#D97706 · #FFFBEB</div>
+    </div>
+    <div class="f-card" style="background: var(--error-subtle); border-color: rgba(225,29,72,0.2);">
+      <div><span class="dot" style="background:var(--error-base)"></span><span class="t">Error</span></div>
+      <div class="v">#E11D48 · #FFF1F2</div>
+    </div>
+    <div class="f-card" style="background: var(--info-subtle); border-color: rgba(37,99,235,0.2);">
+      <div><span class="dot" style="background:var(--info-base)"></span><span class="t">Info</span></div>
+      <div class="v">#2563EB · #EFF6FF</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

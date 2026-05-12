@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Osteóplus — Brand</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin:0; padding:0; background:#fff; font-family: var(--font-body); }
+  .stage {
+    width: 880px; height: 520px;
+    padding: 28px 32px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 20px;
+  }
+
+  /* Header strip */
+  .header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--slate-200);
+  }
+  .tag {
+    font-size: 11px; font-weight: 700;
+    letter-spacing: .12em; text-transform: uppercase;
+    color: var(--teal-700);
+    margin-bottom: 6px;
+  }
+  .header h1 {
+    font-family: var(--font-display);
+    font-size: 28px; line-height: 1.15;
+    margin: 0; color: var(--slate-900); font-weight: 700;
+  }
+  .header p {
+    margin: 4px 0 0; font-size: 13px; color: var(--slate-600);
+    max-width: 56ch;
+  }
+  .header .meta { display:flex; gap: 28px; }
+  .header .meta .k { font-size: 10px; color: var(--slate-500); text-transform: uppercase; letter-spacing: .08em; font-weight: 600; }
+  .header .meta .v { font-size: 13px; color: var(--slate-900); font-weight: 700; margin-top:2px; font-variant-numeric: tabular-nums; }
+
+  /* 6-tile gallery */
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr;
+    gap: 14px;
+    min-height: 0;
+  }
+  .tile {
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--slate-200);
+    background: #fff;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    overflow: hidden;
+    min-height: 0;
+  }
+  .tile .stagebox {
+    display: flex; align-items: center; justify-content: center;
+    padding: 20px;
+    min-height: 0;
+  }
+  .tile .stagebox img.wordmark { width: 78%; height: auto; max-height: 60px; }
+  .tile .stagebox img.glyph    { height: 60px; width: auto; }
+  .tile .label {
+    border-top: 1px solid var(--slate-200);
+    padding: 10px 14px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 8px;
+    background: var(--slate-50);
+  }
+  .tile .name { font-size: 12px; font-weight: 700; color: var(--slate-900); letter-spacing: -.005em; }
+  .tile .file { font-family: var(--font-mono); font-size: 10px; color: var(--slate-500); }
+  .tile .use  { grid-column: 1 / -1; font-size: 10.5px; color: var(--slate-600); margin-top: 2px; }
+
+  /* Background variants for the stage */
+  .tile.dark   .stagebox { background: var(--slate-900); }
+  .tile.dark   .label    { background: var(--slate-800); border-top-color: var(--slate-700); }
+  .tile.dark   .name     { color: #fff; }
+  .tile.dark   .file     { color: var(--slate-400); }
+  .tile.dark   .use      { color: var(--slate-300); }
+
+  .tile.brand  .stagebox { background: var(--teal-600); }
+  .tile.brand  .label    { background: var(--teal-700); border-top-color: var(--teal-800); }
+  .tile.brand  .name     { color: #fff; }
+  .tile.brand  .file     { color: rgba(255,255,255,.75); }
+  .tile.brand  .use      { color: rgba(255,255,255,.85); }
+
+  .tile.soft   .stagebox { background: var(--teal-50); }
+
+  /* Favicon tile chrome */
+  .favicon-row { display: flex; align-items: center; gap: 14px; }
+  .favicon-row .chip {
+    width: 32px; height: 32px; border-radius: 6px;
+    background: #fff; border: 1px solid var(--slate-200);
+    display:flex; align-items:center; justify-content:center;
+    overflow: hidden;
+  }
+  .favicon-row .chip.lg { width: 48px; height: 48px; border-radius: 8px; }
+  .favicon-row .chip.xl { width: 60px; height: 60px; border-radius: 12px; }
+  .favicon-row .chip img { height: 75%; width: auto; }
+</style>
+</head>
+<body>
+  <div class="stage">
+
+    <header class="header">
+      <div>
+        <div class="tag">Brand · Logo system</div>
+        <h1>Osteóplus</h1>
+        <p>One wordmark, five publishable variants, one favicon. The acute <strong>ó</strong> is part of the mark — never drop it. Aspect ratio 2.98 : 1 (favicon 2 : 3).</p>
+      </div>
+      <div class="meta" style="display:flex;gap:28px">
+        <div><div class="k">Primary fill</div><div class="v">#0D9488</div></div>
+        <div><div class="k">Favicon fill</div><div class="v">#134E4A</div></div>
+        <div><div class="k">Min size</div><div class="v">24 px</div></div>
+      </div>
+    </header>
+
+    <section class="gallery">
+
+      <!-- 1 · Original (full-color) -->
+      <div class="tile soft">
+        <div class="stagebox">
+          <img class="wordmark" src="../assets/logos/osteoplus-logo-original.svg" alt="Osteóplus original full-color logo">
+        </div>
+        <div class="label">
+          <div class="name">Original</div>
+          <div class="file">osteoplus-logo-original.svg</div>
+          <div class="use">Full-color marketing surfaces on white</div>
+        </div>
+      </div>
+
+      <!-- 2 · Primary teal -->
+      <div class="tile">
+        <div class="stagebox">
+          <img class="wordmark" src="../assets/logos/osteoplus-logo-primary-teal.svg" alt="Primary teal logo">
+        </div>
+        <div class="label">
+          <div class="name">Primary · Teal-600</div>
+          <div class="file">osteoplus-logo-primary-teal.svg</div>
+          <div class="use">Default — light surfaces, app headers</div>
+        </div>
+      </div>
+
+      <!-- 3 · Black mono -->
+      <div class="tile">
+        <div class="stagebox">
+          <img class="wordmark" src="../assets/logos/osteoplus-logo-black.svg" alt="Black logo">
+        </div>
+        <div class="label">
+          <div class="name">Black · Mono</div>
+          <div class="file">osteoplus-logo-black.svg</div>
+          <div class="use">Print, fax-safe, monochrome</div>
+        </div>
+      </div>
+
+      <!-- 4 · Teal-300 on dark -->
+      <div class="tile dark">
+        <div class="stagebox">
+          <img class="wordmark" src="../assets/logos/osteoplus-logo-teal-300.svg" alt="Teal-300 logo on dark">
+        </div>
+        <div class="label">
+          <div class="name">Teal-300 · On dark</div>
+          <div class="file">osteoplus-logo-teal-300.svg</div>
+          <div class="use">Dark-mode product screens</div>
+        </div>
+      </div>
+
+      <!-- 5 · White on brand -->
+      <div class="tile brand">
+        <div class="stagebox">
+          <img class="wordmark" src="../assets/logos/osteoplus-logo-white.svg" alt="White logo on brand teal">
+        </div>
+        <div class="label">
+          <div class="name">White · Inverse</div>
+          <div class="file">osteoplus-logo-white.svg</div>
+          <div class="use">On brand teal &amp; dark photography</div>
+        </div>
+      </div>
+
+      <!-- 6 · Favicon -->
+      <div class="tile">
+        <div class="stagebox">
+          <div class="favicon-row">
+            <div class="chip"><img src="../assets/logos/favicon.svg" alt=""></div>
+            <div class="chip lg"><img src="../assets/logos/favicon.svg" alt=""></div>
+            <div class="chip xl"><img src="../assets/logos/favicon.svg" alt="Osteóplus favicon"></div>
+          </div>
+        </div>
+        <div class="label">
+          <div class="name">Favicon · Teal-900</div>
+          <div class="file">favicon.svg</div>
+          <div class="use">Tab icon · 16/32/48 px · #134E4A reads cleaner than teal-600</div>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+</body>
+</html>

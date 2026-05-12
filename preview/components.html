@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Osteóplus — Components</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  html, body { margin:0; padding:0; background:#fff; }
+  .stage { width: 880px; padding: 40px 48px; box-sizing: border-box; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+  h3 { margin: 0 0 12px; font-family: var(--font-body); font-size: 11px; font-weight: 700; color: var(--slate-500); letter-spacing: .1em; text-transform: uppercase; }
+  .sec { }
+  .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+
+  /* Status Badges */
+  .sb { font-family: var(--font-body); font-weight: 700; font-size: 11px; letter-spacing: .02em; padding: 4px 10px; border-radius: 999px; color: #fff; display: inline-flex; align-items: center; gap: 4px; }
+  .sb.confirmed { background: var(--teal-600); }
+  .sb.upcoming  { background: var(--info-base); }
+  .sb.urgent    { background: var(--error-base); }
+  .sb.pending   { background: var(--warning-base); }
+  .sb.cancelled { background: var(--slate-500); }
+  .sb.completed { background: var(--success-base); }
+  .sb.draft     { background: var(--slate-300); color: var(--slate-800); }
+
+  .cb { font-family: var(--font-body); font-weight: 600; font-size: 12px; padding: 4px 10px; border-radius: 999px; display: inline-flex; align-items: center; gap: 4px; border: 1px solid; }
+  .cb.osteo { background: var(--teal-50); border-color: var(--teal-200); color: var(--teal-800); }
+  .cb.new   { background: var(--orange-50); border-color: var(--orange-200); color: var(--orange-700); }
+  .cb.review { background: var(--slate-100); border-color: var(--slate-200); color: var(--slate-700); }
+
+  /* Input */
+  .field { display: flex; flex-direction: column; gap: 6px; max-width: 360px; }
+  .field label { font-family: var(--font-body); font-weight: 600; font-size: 13px; color: var(--slate-800); }
+  .field .input {
+    height: 48px; border: 1px solid var(--slate-300); border-radius: var(--radius-md);
+    padding: 0 14px; display:flex; align-items:center; gap:10px;
+    background: #fff;
+  }
+  .field .input input {
+    flex: 1; border: 0; outline: 0; background: transparent; font-family: var(--font-body); font-size: 15px; color: var(--slate-900);
+  }
+  .field .input input::placeholder { color: var(--slate-400); }
+  .field .input.focus { border: 1.5px solid var(--teal-600); box-shadow: var(--shadow-focus); }
+  .field .input.error { border: 1px solid var(--error-base); }
+  .field .helper { font-family: var(--font-body); font-size: 12px; color: var(--slate-500); }
+  .field .helper.err { color: var(--error-base); }
+  .field svg { width: 18px; height: 18px; color: var(--slate-500); flex-shrink: 0; }
+
+  /* Card */
+  .card { border: 1px solid var(--slate-200); border-radius: var(--radius-lg); background: #fff; padding: 16px 16px; }
+  .appt {
+    border: 1.5px solid var(--teal-600); background: var(--teal-50);
+    border-radius: 12px; padding: 14px 14px;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .appt .h { display: flex; align-items: center; gap: 10px; }
+  .av { width: 40px; height: 40px; border-radius: 50%; background: var(--teal-600); color: #fff; display: flex; align-items: center; justify-content: center; font-family: var(--font-body); font-weight: 700; font-size: 13px; flex-shrink: 0; }
+  .appt .name { font-family: var(--font-body); font-weight: 700; font-size: 15px; color: var(--slate-900); }
+  .appt .svc { font-family: var(--font-body); font-size: 12px; color: var(--slate-500); margin-top:2px; }
+  .appt .dt { display: flex; gap: 14px; color: var(--slate-700); font-size: 13px; align-items: center; }
+  .appt .dt span { display: inline-flex; gap: 6px; align-items: center; }
+  .appt .dt svg { width: 16px; height: 16px; color: var(--teal-700); }
+  .appt .actions { display: flex; gap: 8px; padding-top: 4px; border-top: 1px solid var(--slate-200); margin-top: 4px; padding-top: 10px; }
+  .mini { flex: 1; height: 40px; border-radius: var(--radius-md); font-family: var(--font-body); font-weight: 700; font-size: 13px; border: 0; cursor: pointer; display:flex; align-items:center; justify-content:center; }
+  .mini.prim { background: var(--teal-600); color: #fff; }
+  .mini.sec  { background: #fff; color: var(--slate-600); border: 1px solid var(--slate-300); }
+
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="sec">
+    <h3>Status badges</h3>
+    <div class="row">
+      <span class="sb confirmed">Confirmed</span>
+      <span class="sb upcoming">Upcoming</span>
+      <span class="sb urgent">Urgent</span>
+      <span class="sb pending">Pending</span>
+      <span class="sb cancelled">Cancelled</span>
+      <span class="sb completed">Completed</span>
+      <span class="sb draft">Draft</span>
+    </div>
+
+    <h3 style="margin-top:24px;">Category chips</h3>
+    <div class="row">
+      <span class="cb osteo">Osteopathy</span>
+      <span class="cb osteo">Physio</span>
+      <span class="cb new">New</span>
+      <span class="cb review">Review</span>
+    </div>
+
+    <h3 style="margin-top:24px;">Appointment card</h3>
+    <div class="appt">
+      <div class="h">
+        <div class="av">SM</div>
+        <div style="flex:1;">
+          <div class="name">Dr. Sarah Mitchell</div>
+          <div class="svc">Osteopathic Treatment</div>
+        </div>
+        <span class="sb confirmed">Confirmed</span>
+      </div>
+      <div class="dt">
+        <span><i data-lucide="calendar"></i>Mon, Apr 14</span>
+        <span><i data-lucide="clock"></i>10:30 – 11:15 AM</span>
+      </div>
+      <div class="actions">
+        <button class="mini prim">Reschedule</button>
+        <button class="mini sec">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h3>Text inputs</h3>
+    <div class="field">
+      <label>Phone number</label>
+      <div class="input"><i data-lucide="phone"></i><input placeholder="+34 93 000 00 00"></div>
+      <div class="helper">We'll send a confirmation SMS.</div>
+    </div>
+    <div class="field" style="margin-top: 16px;">
+      <label>Your name</label>
+      <div class="input focus"><input value="Carme Puig Ribas"></div>
+      <div class="helper">Focused state · Teal-600 border + ring</div>
+    </div>
+    <div class="field" style="margin-top: 16px;">
+      <label>Email</label>
+      <div class="input error"><i data-lucide="mail"></i><input value="carme@" ><i data-lucide="circle-alert" style="color:var(--error-base);"></i></div>
+      <div class="helper err">Please enter a full email address.</div>
+    </div>
+
+    <h3 style="margin-top:24px;">Card — default</h3>
+    <div class="card">
+      <div style="display:flex; gap:12px; align-items:flex-start;">
+        <div style="width:44px; height:44px; border-radius:10px; background: var(--teal-100); display:flex; align-items:center; justify-content:center; color: var(--teal-700);"><i data-lucide="clipboard-plus"></i></div>
+        <div style="flex:1;">
+          <div style="font-family: var(--font-display); font-weight: 700; font-size: 16px; color: var(--slate-900);">Bring your referral</div>
+          <div style="font-size: 13px; color: var(--slate-600); margin-top:4px; line-height:20px;">If you have a GP referral, snap a photo and we'll add it to your record.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>lucide.createIcons();</script>
+</body>
+</html>

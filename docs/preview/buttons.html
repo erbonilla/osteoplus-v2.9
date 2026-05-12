@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Osteóplus — Buttons</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  html, body { margin:0; padding:0; background:#fff; }
+  .stage { width: 880px; padding: 40px 48px; box-sizing: border-box; }
+  .sec { margin-bottom: 28px; }
+  .sec h3 { margin: 0 0 14px; font-family: var(--font-body); font-size: 11px; font-weight: 700; color: var(--slate-500); letter-spacing: .1em; text-transform: uppercase; }
+  .row { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+
+  .btn {
+    border: 0; cursor: pointer; display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--font-body); font-weight: 700;
+    border-radius: var(--radius-md);
+    transition: background .15s, border-color .15s, transform .1s;
+  }
+  .btn.lg { height: 56px; padding: 0 24px; font-size: 16px; }
+  .btn.md { height: 48px; padding: 0 20px; font-size: 14px; }
+  .btn.sm { height: 40px; padding: 0 16px; font-size: 13px; }
+
+  .btn.primary { background: var(--teal-600); color: #fff; }
+  .btn.primary:hover { background: var(--teal-700); }
+  .btn.primary.pressed { background: var(--teal-800); transform: scale(0.98); }
+  .btn.primary.disabled { background: var(--slate-200); color: var(--slate-400); cursor: not-allowed; }
+
+  .btn.secondary { background: #fff; color: var(--slate-700); border: 1px solid var(--slate-300); }
+  .btn.secondary:hover { background: var(--slate-50); }
+
+  .btn.ghost { background: transparent; color: var(--teal-700); }
+  .btn.ghost:hover { background: var(--teal-50); }
+
+  .btn.danger { background: var(--error-base); color: #fff; }
+  .btn.danger:hover { background: var(--error-strong); }
+
+  .btn svg { width: 18px; height: 18px; }
+  .btn.lg svg { width: 20px; height: 20px; }
+
+  .caption { font-family: var(--font-mono); font-size: 10px; color: var(--slate-500); margin-top: 8px; }
+
+  .icon-btn {
+    width: 48px; height: 48px; border-radius: var(--radius-md);
+    border: 1px solid var(--slate-300); background: #fff; display: inline-flex; align-items: center; justify-content: center; color: var(--slate-700);
+    cursor: pointer;
+  }
+  .icon-btn:hover { background: var(--slate-50); }
+  .icon-btn.brand { background: var(--teal-600); border-color: var(--teal-700); color:#fff; }
+  .icon-btn svg { width: 22px; height: 22px; }
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="sec">
+    <h3>Primary — Teal-600 · CTA</h3>
+    <div class="row">
+      <div><button class="btn primary lg"><i data-lucide="calendar"></i>Book appointment</button><div class="caption">lg · 56h</div></div>
+      <div><button class="btn primary md"><i data-lucide="calendar"></i>Book</button><div class="caption">md · 48h</div></div>
+      <div><button class="btn primary sm">Book</button><div class="caption">sm · 40h</div></div>
+      <div><button class="btn primary md pressed">Pressed</button><div class="caption">pressed</div></div>
+      <div><button class="btn primary md disabled">Disabled</button><div class="caption">disabled</div></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h3>Secondary — Outlined · white</h3>
+    <div class="row">
+      <button class="btn secondary lg">Reschedule</button>
+      <button class="btn secondary md">Cancel</button>
+      <button class="btn secondary md"><i data-lucide="map-pin"></i>Get directions</button>
+      <button class="btn secondary sm">Learn more</button>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h3>Ghost &amp; Danger</h3>
+    <div class="row">
+      <button class="btn ghost md">View all appointments</button>
+      <button class="btn ghost md"><i data-lucide="arrow-right"></i>Continue</button>
+      <button class="btn danger md">Cancel appointment</button>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h3>Icon buttons — always in 48px hit frame</h3>
+    <div class="row">
+      <button class="icon-btn"><i data-lucide="arrow-left"></i></button>
+      <button class="icon-btn"><i data-lucide="search"></i></button>
+      <button class="icon-btn brand"><i data-lucide="plus"></i></button>
+      <button class="icon-btn"><i data-lucide="bell"></i></button>
+      <button class="icon-btn"><i data-lucide="settings"></i></button>
+    </div>
+  </div>
+</div>
+<script>lucide.createIcons();</script>
+</body>
+</html>

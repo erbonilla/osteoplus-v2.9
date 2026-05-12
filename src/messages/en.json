@@ -1,0 +1,688 @@
+{
+  "metadata": {
+    "title": "Osteóplus | Osteopathy and rehabilitation in Barcelona",
+    "description": "Book your visit and follow your recovery with clear, kind, accessible guidance."
+  },
+  "offline": {
+    "eyebrow": "Offline status",
+    "title": "You are offline right now",
+    "body": "You can try again when your connection returns. If you need to talk to the clinic, call +34 93 123 45 67.",
+    "cta": "Return home"
+  },
+  "landing": {
+    "header": {
+      "homeAria": "Go to the Osteóplus home page",
+      "logoAlt": "Osteóplus",
+      "navAria": "Primary navigation",
+      "menuOpen": "Open menu",
+      "menuClose": "Close menu",
+      "login": "Log in",
+      "signUp": "Sign up",
+      "themeAria": "Change color mode",
+      "themeSystem": "System",
+      "themeLight": "Light",
+      "themeDark": "Dark",
+      "languageAria": "Change language",
+      "languageEs": "Español",
+      "languageEn": "English",
+      "navItems": [
+        {
+          "href": "#top",
+          "label": "Home"
+        },
+        {
+          "href": "#services",
+          "label": "Services"
+        },
+        {
+          "href": "#team",
+          "label": "Team"
+        },
+        {
+          "href": "#about",
+          "label": "Clinic"
+        },
+        {
+          "href": "#contact",
+          "label": "Contact"
+        }
+      ]
+    },
+    "hero": {
+      "eyebrow": "Osteopathy · Physiotherapy · Rehab",
+      "titleStart": "Empower your",
+      "titleEmphasisOne": "health",
+      "titleMiddle": "live with",
+      "titleEmphasisTwo": "comfort.",
+      "body": "Specialized osteopathy, physiotherapy, and rehabilitation treatments for all ages. Book your first consultation with a clear path and no commitment.",
+      "primaryCta": "Book appointment",
+      "secondaryCta": "Our services",
+      "imageAlt": "Osteóplus specialist smiling"
+    },
+    "services": {
+      "eyebrow": "Services",
+      "title": "Specialized and prevention care",
+      "body": "Personalized treatments for every stage of life, from acute pain relief to long-term prevention.",
+      "items": [
+        {
+          "title": "Osteopathy",
+          "body": "Manual support for muscle discomfort, limited mobility, and postural care with gentle techniques.",
+          "imageAlt": "Osteopathy icon",
+          "icon": "osteopathy"
+        },
+        {
+          "title": "Physiotherapy",
+          "body": "Sessions to rebuild strength, reduce pain, and follow a plan fitted to your recovery stage.",
+          "imageAlt": "Physiotherapy icon",
+          "icon": "physiotherapy"
+        },
+        {
+          "title": "Rehabilitation",
+          "body": "Progressive guidance after an injury, surgery, or a period of lower activity, with clear goals.",
+          "imageAlt": "Rehabilitation icon",
+          "icon": "rehabilitation"
+        }
+      ]
+    },
+    "team": {
+      "eyebrow": "Meet us",
+      "title": "Our close team",
+      "body": "The Osteóplus team brings clinical experience and human care together so every visit has a clear direction.",
+      "socialLabels": {
+        "facebook": "Facebook",
+        "instagram": "Instagram",
+        "linkedin": "LinkedIn"
+      },
+      "items": [
+        {
+          "name": "Dra. María García",
+          "role": "Physiotherapist",
+          "image": "/images/team/physiotherapist.png",
+          "imageAlt": "Portrait of Dra. María García"
+        },
+        {
+          "name": "Dr. Michael Araya",
+          "role": "Osteopathy",
+          "image": "/images/team/osteopathy.png",
+          "imageAlt": "Portrait of Dr. Michael Araya"
+        },
+        {
+          "name": "Dra. Sophia Johnson",
+          "role": "Rehabilitation",
+          "image": "/images/team/rehabilitation.png",
+          "imageAlt": "Portrait of Dra. Sophia Johnson"
+        }
+      ]
+    },
+    "testimonials": {
+      "eyebrow": "Reviews",
+      "title": "What our patients say",
+      "body": "Our patients' trust is our greatest achievement.",
+      "previous": "View previous review",
+      "next": "View next review",
+      "rating": "Five-star rating",
+      "items": [
+        {
+          "quote": "At 72, I was worried about using a health website, but Osteóplus gave me clear steps to book my appointment. The team was attentive and very professional.",
+          "name": "Pilar G.",
+          "meta": "Patient since 2024",
+          "imageAlt": "Portrait of Pilar G."
+        }
+      ]
+    },
+    "about": {
+      "eyebrow": "About us",
+      "titleStart": "Our",
+      "titleEmphasis": "clinic",
+      "body": "At Osteóplus we combine clinical expertise with accessible technology to deliver personalized care. Our team works so your recovery feels comfortable, clear, and effective.",
+      "imageAlt": "Interior of the Osteóplus clinic",
+      "stats": [
+        {
+          "value": "10+",
+          "label": "Years of experience",
+          "icon": "experience"
+        },
+        {
+          "value": "1,500+",
+          "label": "Patients treated",
+          "icon": "patients"
+        },
+        {
+          "value": "AA",
+          "label": "WCAG accessibility",
+          "icon": "accessibility"
+        }
+      ]
+    },
+    "subscribe": {
+      "title": "Subscribe to our newsletter",
+      "body": "Receive health tips and clinic news directly in your inbox.",
+      "label": "Email address",
+      "placeholder": "you@example.com",
+      "cta": "Subscribe",
+      "helper": "Subscription will be available after legal validation. We will never share your data with third parties.",
+      "success": "Thank you. We have registered your interest in the newsletter.",
+      "invalid": "Check the email address and try again."
+    },
+    "footer": {
+      "logoAlt": "Osteóplus",
+      "description": "Osteopathy, physiotherapy, and rehabilitation, accessible in Barcelona.",
+      "copyright": "© 2026 Osteóplus. All rights reserved.",
+      "legalLinks": ["Privacy policy", "Legal notice", "Cookies"],
+      "socialLabels": {
+        "facebook": "Open Osteóplus on Facebook",
+        "instagram": "Open Osteóplus on Instagram",
+        "linkedin": "Open Osteóplus on LinkedIn"
+      },
+      "columns": [
+        {
+          "title": "Clinic",
+          "links": ["Services", "Team", "About us", "Contact", "FAQ"]
+        },
+        {
+          "title": "Services",
+          "links": ["Osteopathy", "Physiotherapy", "Rehabilitation", "Senior mobility"]
+        }
+      ],
+      "contact": {
+        "address": ["Carrer de Verdí, 12, 08012", "Barcelona"],
+        "phone": "+34 93 123 45 67",
+        "mobile": "+34 600 00 00 00",
+        "email": "osteopathy@osteoplus.com",
+        "hours": ["Mon–Fri 8:00–16:00", "Sat 8:00–12:00"]
+      }
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Welcome back",
+      "description": "Sign in to manage your appointments and recovery.",
+      "submit": "Sign in",
+      "forgotPassword": "Forgot your password?",
+      "noAccount": "Don't have an account?",
+      "createAccount": "Create account"
+    },
+    "signup": {
+      "title": "Create account",
+      "description": "Create your account to manage your appointments and follow your rehabilitation.",
+      "submit": "Create account",
+      "haveAccount": "Already have an account?",
+      "signIn": "Sign in"
+    },
+    "forgotPassword": {
+      "title": "Reset password",
+      "description": "Enter your email address and we will send you a link to reset your password.",
+      "submit": "Send link",
+      "backToLogin": "Back to sign in",
+      "successTitle": "Link sent",
+      "successDescription": "If the email matches an existing account, you will receive a password reset link."
+    },
+    "fields": {
+      "fullName": "Full name",
+      "email": "Email address",
+      "phoneOptional": "Phone number (optional)",
+      "password": "Password",
+      "confirmPassword": "Confirm password",
+      "passwordHint": "Minimum 8 characters"
+    },
+    "privacy": {
+      "healthConsent": "I consent to my health data being processed to manage my care at Osteóplus.",
+      "terms": "I accept the terms of use",
+      "marketing": "I would like to receive health tips and updates (optional)",
+      "marketingHelper": "You can unsubscribe at any time from settings.",
+      "gdpr": "Your data is protected under GDPR."
+    },
+    "social": {
+      "divider": "Or continue with",
+      "google": "Continue with Google",
+      "apple": "Continue with Apple",
+      "email": "Continue with email"
+    },
+    "actions": {
+      "close": "Close",
+      "showPassword": "Show password",
+      "hidePassword": "Hide password"
+    },
+    "errors": {
+      "emailRequired": "Enter your email address.",
+      "emailInvalid": "The email format is not valid.",
+      "passwordRequired": "Enter your password.",
+      "passwordMin": "The password must be at least 8 characters.",
+      "passwordMismatch": "The passwords do not match.",
+      "fullNameRequired": "Enter your full name.",
+      "fullNameMin": "The name must be at least 2 characters.",
+      "healthConsentRequired": "We need your consent to process your health data.",
+      "termsRequired": "You must accept the terms of use.",
+      "loginFailed": "We could not sign you in. Check your details or try again.",
+      "signupFailed": "We could not create the account. Try again or call +34 93 123 45 67.",
+      "generic": "Something went wrong. Try again or call +34 93 123 45 67."
+    }
+  },
+  "fixtures": {
+    "services": {
+      "osteoGeneral": "General osteopathy",
+      "osteoGeneralDesc": "Assessment and manual treatment for musculoskeletal discomfort.",
+      "physioRecovery": "Recovery physiotherapy",
+      "physioRecoveryDesc": "Sessions to rebuild strength and mobility after injury or rest.",
+      "rehabPostop": "Post-surgery rehabilitation",
+      "rehabPostopDesc": "Progressive recovery plan after surgery.",
+      "osteoCranial": "Cranial osteopathy",
+      "osteoCranialDesc": "Gentle techniques for headaches, jaw, and neck tension.",
+      "physioSport": "Sports physiotherapy",
+      "physioSportDesc": "Recovery and prevention of sports injuries."
+    }
+  },
+  "common": {
+    "back": "Back",
+    "continue": "Continue",
+    "cancel": "Cancel",
+    "close": "Close",
+    "loading": "Loading",
+    "retry": "Retry",
+    "required": "Required",
+    "optional": "Optional",
+    "step": "Step {current} of {total}",
+    "callClinic": "Call the clinic",
+    "whatsapp": "WhatsApp",
+    "clinicPhone": "+34 93 123 45 67",
+    "offlineError": "No connection. Try again or call +34 93 123 45 67.",
+    "theme": {
+      "light": "Light",
+      "dark": "Dark",
+      "system": "System",
+      "aria": "Change color mode"
+    },
+    "language": {
+      "aria": "Change language",
+      "es": "Español",
+      "en": "English"
+    }
+  },
+  "booking": {
+    "title": "Book your appointment",
+    "metaDescription": "Book your osteopathy, physiotherapy, or rehabilitation appointment at Osteóplus Barcelona.",
+    "step1": {
+      "title": "Choose service",
+      "subtitle": "Step 1 of 3: choose patient type and service"
+    },
+    "step2": {
+      "title": "Choose date and time",
+      "subtitle": "Step 2 of 3: choose date and time"
+    },
+    "step3": {
+      "title": "Confirm your appointment",
+      "subtitle": "Step 3 of 3: confirm and complete your details"
+    },
+    "patientType": {
+      "question": "Is this your first visit?",
+      "new": "First visit",
+      "returning": "I have visited before"
+    },
+    "visitType": {
+      "question": "How would you prefer to visit?",
+      "inPerson": "At the clinic",
+      "video": "Video call"
+    },
+    "service": {
+      "sectionTitle": "Choose a service",
+      "browseBySpecialist": "By specialist",
+      "browseBySymptom": "By symptom",
+      "anyPractitioner": {
+        "title": "Any available practitioner",
+        "body": "We will assign the next available specialist."
+      },
+      "duration": "{minutes} min",
+      "price": "{amount} €"
+    },
+    "calendar": {
+      "viewFullMonth": "View full month",
+      "noSlotsTitle": "No available times",
+      "noSlotsBody": "No times available for this date. Try another day or call the clinic.",
+      "morning": "Morning",
+      "afternoon": "Afternoon",
+      "evening": "Evening",
+      "fullyBooked": "Fully booked"
+    },
+    "summary": {
+      "title": "Your appointment summary",
+      "service": "Service",
+      "practitioner": "Practitioner",
+      "date": "Date",
+      "time": "Time",
+      "duration": "Duration",
+      "location": "Location",
+      "price": "Price"
+    },
+    "guestMode": "Book as guest",
+    "signInMode": "Sign in to autofill",
+    "fields": {
+      "fullName": "Full name",
+      "phone": "Mobile phone",
+      "phoneHelper": "We will use this number to confirm your appointment.",
+      "email": "Email address (optional)",
+      "notes": "Notes for the practitioner (optional)",
+      "notesHelper": "Briefly describe the reason for your visit.",
+      "countryCode": "ES +34"
+    },
+    "consent": {
+      "label": "I consent to my data being processed to manage this appointment at Osteóplus.",
+      "required": "We need your consent to book the appointment."
+    },
+    "confirm": "Confirm appointment",
+    "confirming": "Confirming appointment",
+    "help": {
+      "call": "Call the clinic",
+      "whatsapp": "Message us on WhatsApp",
+      "phoneLine": "Need to talk to us? Call the clinic at +34 93 123 45 67."
+    },
+    "errors": {
+      "patientTypeRequired": "Choose whether this is your first visit.",
+      "visitTypeRequired": "Choose how you prefer to visit.",
+      "serviceRequired": "Choose a service to continue.",
+      "dateRequired": "Choose a date.",
+      "timeRequired": "Choose a time.",
+      "fullNameRequired": "Enter your full name.",
+      "fullNameMin": "The name must be at least 2 characters.",
+      "phoneRequired": "Enter your phone number.",
+      "phoneInvalid": "The phone format is not valid.",
+      "emailInvalid": "The email format is not valid.",
+      "consentRequired": "We need your consent to book the appointment.",
+      "generic": "We could not book the appointment. Try again or call +34 93 123 45 67."
+    },
+    "confirmation": {
+      "title": "Appointment confirmed",
+      "subtitle": "Your booking has been registered successfully.",
+      "bookingCode": "Booking code",
+      "details": "Your appointment details",
+      "paymentNote": "Payment is made at the clinic on the day of your appointment.",
+      "actions": {
+        "addToCalendar": "Add to calendar",
+        "getDirections": "Get directions",
+        "returnHome": "Return home",
+        "bookAnother": "Book another appointment"
+      },
+      "help": "Need to change or cancel? You can do so up to 24 hours in advance by calling +34 93 123 45 67."
+    }
+  },
+  "appointments": {
+    "title": "Your appointments",
+    "tabs": {
+      "upcoming": "Upcoming",
+      "past": "Past"
+    },
+    "empty": {
+      "title": "No appointments yet",
+      "body": "Book your first visit and start your journey to better health.",
+      "cta": "Book appointment"
+    },
+    "status": {
+      "confirmed": "Confirmed",
+      "pending": "Pending",
+      "cancelled": "Cancelled",
+      "completed": "Completed"
+    },
+    "card": {
+      "reschedule": "Reschedule",
+      "cancel": "Cancel appointment",
+      "viewDetails": "View details"
+    },
+    "detail": {
+      "title": "Appointment details",
+      "addToCalendar": "Add to calendar",
+      "getDirections": "Get directions",
+      "policy": "You can reschedule or cancel your appointment up to 24 hours in advance.",
+      "help": "Need help? Call +34 93 123 45 67."
+    },
+    "quickActions": {
+      "title": "Quick actions",
+      "bookNew": "Book appointment",
+      "callClinic": "Call the clinic",
+      "getDirections": "Get directions"
+    }
+  },
+  "profile": {
+    "title": "Your profile",
+    "entry": {
+      "title": "Manage your account",
+      "description": "Manage your appointments, exercises, and preferences from your profile.",
+      "signIn": "Sign in",
+      "createAccount": "Create account",
+      "phoneHelp": "If you need help with your account, call +34 93 123 45 67."
+    },
+    "authenticated": {
+      "account": "Account",
+      "appointments": "Appointments",
+      "rehabilitation": "Rehabilitation plan",
+      "language": "Language",
+      "theme": "Appearance",
+      "notifications": "Notifications",
+      "privacy": "Privacy and data",
+      "signOut": "Sign out"
+    },
+    "nextAppointment": {
+      "title": "Your next appointment",
+      "empty": "No upcoming appointments.",
+      "bookCta": "Book appointment"
+    },
+    "topbar": {
+      "homeLink": "Go to the Osteóplus home page",
+      "avatarAria": "{name}'s avatar"
+    },
+    "nav": {
+      "aria": "Profile navigation",
+      "personalInfo": "Personal information",
+      "patientContext": "Clinical context",
+      "careHistory": "Care history",
+      "recovery": "Recovery",
+      "family": "Family",
+      "privacy": "Privacy and security",
+      "notifications": "Notifications",
+      "accessibility": "Accessibility",
+      "favorites": "Favorites"
+    },
+    "error": {
+      "title": "Something went wrong",
+      "description": "We could not load your profile. Try again or call +34 93 123 45 67.",
+      "retry": "Retry"
+    },
+    "personalInfo": {
+      "title": "Personal information",
+      "description": "Review and update your contact details.",
+      "fields": {
+        "firstName": "First name",
+        "lastName": "Last name",
+        "email": "Email address",
+        "phone": "Phone number",
+        "phoneHelper": "Format: +34 6XX XXX XXX"
+      },
+      "actions": {
+        "save": "Save changes",
+        "saving": "Saving",
+        "cancel": "Discard"
+      },
+      "errors": {
+        "firstNameRequired": "Enter your first name.",
+        "firstNameMin": "The first name must be at least 2 characters.",
+        "lastNameRequired": "Enter your last name.",
+        "lastNameMin": "The last name must be at least 2 characters.",
+        "emailRequired": "Enter your email address.",
+        "emailInvalid": "The email format is not valid.",
+        "phoneInvalid": "The phone format is not valid."
+      }
+    },
+    "patientContext": {
+      "title": "Clinical context",
+      "description": "Information about your current conditions and treatments. Edit these details at the clinic.",
+      "conditions": {
+        "title": "Conditions",
+        "empty": "No conditions on record."
+      },
+      "medicationsAllergies": {
+        "title": "Medications and allergies",
+        "medications": "Medications",
+        "allergies": "Allergies",
+        "empty": "No records."
+      }
+    },
+    "careHistory": {
+      "title": "Care history",
+      "description": "Your sessions and prescribed plans at Osteóplus.",
+      "sessions": {
+        "title": "Recent sessions",
+        "empty": "No sessions recorded yet."
+      },
+      "plans": {
+        "title": "Prescribed plans",
+        "empty": "No prescribed plans yet."
+      }
+    },
+    "recovery": {
+      "breadcrumb": "Profile / Recovery",
+      "title": "Recovery",
+      "description": "Goals, milestones, and current treatment plan.",
+      "goals": {
+        "title": "Current goals",
+        "empty": "No goals assigned yet."
+      },
+      "goalStatus": {
+        "onTrack": "On track",
+        "pending": "Pending",
+        "needsReview": "Needs review",
+        "complete": "Complete"
+      },
+      "treatmentPlan": {
+        "title": "Treatment plan",
+        "adherence": "Adherence",
+        "nextMilestone": "Next milestone",
+        "completed": "{completed} of {total} sessions",
+        "empty": "No treatment plan assigned yet."
+      },
+      "activeProgram": {
+        "title": "Current program",
+        "exercises": "{count} exercises",
+        "duration": "{minutes} min",
+        "day": "Day {label}",
+        "prescribedBy": "Prescribed by {name}",
+        "startSession": "Start session",
+        "viewProgram": "View program",
+        "empty": "No active program at this time."
+      },
+      "recentSessions": {
+        "title": "Recent sessions",
+        "painBefore": "Pain before",
+        "painAfter": "Pain after",
+        "duration": "{minutes} min",
+        "status": {
+          "completed": "Completed",
+          "paused": "Paused",
+          "skipped": "Skipped"
+        },
+        "empty": "No sessions completed yet."
+      },
+      "safety": {
+        "title": "Safety contact",
+        "body": "If pain increases or something does not feel right, pause the exercise and call the clinic.",
+        "callClinic": "Call clinic"
+      }
+    },
+    "family": {
+      "title": "Family",
+      "description": "Linked profiles and emergency contact.",
+      "profiles": {
+        "title": "Linked profiles",
+        "hasPlan": "Active plan",
+        "empty": "No linked profiles."
+      },
+      "emergency": {
+        "title": "Emergency contact"
+      }
+    },
+    "privacy": {
+      "title": "Privacy and security",
+      "description": "Manage your account, security, and data.",
+      "account": {
+        "title": "Account",
+        "email": "Email address",
+        "password": "Password",
+        "changeEmail": "Change",
+        "changePassword": "Change"
+      },
+      "security": {
+        "title": "Security",
+        "twoFactor": "Two-step verification",
+        "twoFactorDescription": "Add an extra layer of protection to your account.",
+        "sessionAlerts": "New session alerts",
+        "sessionAlertsDescription": "Get notified when you sign in from a new device."
+      },
+      "data": {
+        "title": "Your data",
+        "description": "You can download a copy of your data or request account deletion. For more information, see our privacy policy.",
+        "download": "Download my data",
+        "delete": "Delete account"
+      }
+    },
+    "notifications": {
+      "title": "Notifications",
+      "description": "Choose how and when you receive alerts.",
+      "channels": {
+        "title": "Channels",
+        "email": "Email",
+        "emailDescription": "Appointment confirmations and reminders by email.",
+        "sms": "SMS",
+        "smsDescription": "Appointment reminders by text message.",
+        "push": "Push notifications",
+        "pushDescription": "Real-time alerts on your device."
+      },
+      "frequency": {
+        "title": "Summary frequency",
+        "immediately": "Immediately",
+        "immediatelyDescription": "Receive each alert as it happens.",
+        "daily": "Daily digest",
+        "dailyDescription": "One summary with all alerts from the day.",
+        "weekly": "Weekly digest",
+        "weeklyDescription": "One summary with all alerts from the week."
+      },
+      "reminders": {
+        "label": "Appointment reminders",
+        "description": "Get a reminder 24 hours before your next appointment."
+      }
+    },
+    "accessibility": {
+      "title": "Accessibility",
+      "description": "Adjust how the app looks and behaves.",
+      "display": {
+        "title": "Text",
+        "textSize": "Text size",
+        "default": "Default",
+        "defaultDescription": "Standard text size.",
+        "large": "Large",
+        "largeDescription": "Text 20% larger.",
+        "xlarge": "Extra large",
+        "xlargeDescription": "Text 40% larger."
+      },
+      "motionContrast": {
+        "title": "Motion and contrast",
+        "reducedMotion": "Reduce motion",
+        "reducedMotionDescription": "Disable animations and transitions.",
+        "highContrast": "High contrast",
+        "highContrastDescription": "Increase color contrast for better readability."
+      }
+    },
+    "favorites": {
+      "title": "Favorites",
+      "description": "Exercises, practitioners, and articles you have saved.",
+      "exercises": {
+        "title": "Exercises",
+        "empty": "No exercises saved yet."
+      },
+      "providers": {
+        "title": "Practitioners",
+        "empty": "No practitioners saved yet."
+      },
+      "articles": {
+        "title": "Articles",
+        "empty": "No articles saved yet."
+      }
+    }
+  }
+}

@@ -1,0 +1,375 @@
+# Osteóplus v2.9 — Cursor Rules
+
+You are working on `osteoplus-v2.9`, the Osteóplus responsive PWA landing-page project — a Barcelona osteopathy, physiotherapy, and rehabilitation product. Always follow these rules when generating or modifying code in this repository.
+
+---
+
+## Source of truth
+
+Before making any setup or implementation decision, consult the project source files in this priority order:
+
+1. `docs/project-source/osteoplus-design-system.md` — tokens, accessibility, typography, layout, motion, component behavior.
+2. `docs/project-source/brand-kit.md` — brand identity, logo rules, voice, spelling, v4.2 token migration.
+3. `docs/project-source/style-guide.md` — writing, bilingual, casing, copy restrictions.
+4. `docs/project-source/osteoplus-project-dna.md` — product scope, stack, architecture, definition of done.
+5. `docs/project-source/ui-kit.md` — component maturity, variants, props, accessibility requirements.
+6. `docs/preview/*.html` and `docs/preview/colors_and_type.css` — visual examples and token checks.
+
+Legacy paths under `documents/` and `preview/` are also valid if `docs/project-source/` copies have not been created yet.
+
+If documents conflict, use the newest approved source. For visual tokens, apply the **v4.2 migration**:
+
+- Filled CTA: Teal-700 `#0F766E`
+- Brand border / icon emphasis / logo fill: Teal-600 `#0D9488`
+- Accent default: Orange-700 `#C2410C`
+- Focus ring: Teal-500 `#14B8A6`
+
+---
+
+## Required stack
+
+Do not deviate from this stack unless the user explicitly approves:
+
+- **Framework**: Next.js 15 App Router (do not upgrade to 16 without approval)
+- **React**: React 19
+- **Language**: TypeScript strict (`noUncheckedIndexedAccess`, `noImplicitOverride`)
+- **Package manager**: pnpm
+- **Styling**: Tailwind CSS v4 with semantic CSS variables in `src/app/globals.css`
+- **UI primitives**: Source-owned shadcn/Radix-style components
+- **Animation**: Framer Motion (must respect `prefers-reduced-motion`)
+- **Forms**: react-hook-form + zod + `@hookform/resolvers`
+- **i18n**: next-intl (Spanish default, English secondary)
+- **Theme**: next-themes with `class` strategy
+- **PWA**: `@ducanh2912/next-pwa`
+- **Icons**: lucide-react only (2 px stroke, round cap/join)
+- **Dates**: date-fns with `es` and `en-GB` locale support
+- **Lint/format**: Biome
+- **Testing**: Vitest, Playwright, axe-core, Lighthouse CI
+
+---
+
+## Non-negotiables
+
+These rules apply to every file you generate or modify. Never violate them:
+
+- Spanish (`es`) is the default locale. English (`en`) must have parity.
+- Every user-facing string must come from `next-intl` messages. Never hard-code UI copy in components.
+- Every screen and component must support dark and light mode.
+- Use semantic design tokens only in components. Raw hex values are allowed only in `:root`, `.dark`, manifest metadata, static asset metadata, or one-time migration scripts.
+- WCAG 2.2 AA is required.
+- Touch targets: ≥ 48 × 48 px. Primary CTAs: ≥ 56 × 48 px.
+- Body text ≥ 16 px (18 px preferred for senior-facing). Input text ≥ 16 px.
+- Visible focus rings are required.
+- All interactive elements need visible labels or accessible names.
+- No placeholder-only form labels.
+- No pre-checked consent boxes.
+- No color-only indicators.
+- Motion must respect `prefers-reduced-motion`.
+- No parallax, autoplay media, or decorative animation.
+- No emoji in UI chrome, copy, or gamification.
+- Use Lucide icons with 2 px stroke and round cap/join.
+- Spell the brand exactly as **Osteóplus** with the accented `ó`. Never write `Osteoplus`, `OsteoPlus`, `Osteo+`, or `osteo plus`.
+
+---
+
+## Brand and copy rules
+
+Write like a trusted family osteopath explaining something in plain language.
+
+**Always:**
+
+- Write Spanish first, then English.
+- Use warm, clinical-clear, quietly confident language.
+- Use sentence case for all UI text (buttons, headings, nav, labels, modals, toasts, empty states).
+- Use plain symptom-based language.
+- Include a clear way forward in errors and safety copy.
+- Include a clinic phone escape hatch in safety-critical flows.
+
+**Never:**
+
+- Use hype words (`revolutionary`, `seamless`, `cutting-edge`).
+- Use minimizing words (`simply`, `just`, `easily`) when they could blame the user.
+- Use jargon when plain language works.
+- Use exclamation marks in UI chrome.
+- Use ALL CAPS for emphasis.
+- Use emoji.
+
+---
+
+## Project structure
+
+```text
+src/
+  app/
+    [locale]/
+      layout.tsx
+      page.tsx
+    api/
+    globals.css
+    manifest.ts
+    robots.ts
+    sitemap.ts
+  components/
+    brand/          # Logo, brand-mark components
+    landing/        # Landing-page sections (hero, services, footer, etc.)
+    ui/             # Reusable primitives (button, theme-toggle, etc.)
+    domain/         # Product-specific reusable components (beyond landing)
+    patterns/       # Shared layout/interaction patterns
+    providers.tsx   # ThemeProvider + context wrappers
+  i18n/
+    routing.ts
+    request.ts
+  lib/
+    schemas/        # Zod form schemas
+    theme/          # Theme utilities
+    utils/          # General utilities (cn, clsx helpers)
+  messages/
+    es.json
+    en.json
+public/
+  fonts/
+  icons/
+  logos/
+docs/
+  project-source/
+  preview/
+  qa/
+```
+
+- `/components/ui` → reusable primitives.
+- `/components/landing` → landing-page sections.
+- `/components/domain` → product-specific components reused beyond the landing page.
+
+---
+
+## Commands
+
+```bash
+pnpm install        # Install dependencies
+pnpm dev            # Start dev server
+pnpm build          # Production build
+pnpm check          # Biome check
+pnpm check:write    # Biome format + safe lint fixes
+pnpm typecheck      # tsc --noEmit
+pnpm test           # Vitest
+pnpm e2e            # Playwright
+pnpm validate       # check + typecheck + test + build
+```
+
+Before finalizing any significant change, run at minimum:
+
+```bash
+pnpm check && pnpm typecheck && pnpm build
+```
+
+Run Playwright and axe when UI behavior, accessibility, routing, theme, or i18n changes.
+
+---
+
+## Styling rules
+
+- Define all colors as semantic CSS variables in `src/app/globals.css`.
+- Consume tokens through Tailwind utilities and CSS variables.
+- Never introduce one-off colors.
+- Never use opacity hacks for disabled, hover, or active states.
+- Use border-first, shadow-light design.
+- Use the 4-point spacing grid.
+- Radius tokens: button/input `8px`, card `12px`, modal `16px`, hero containers `24px`, chips `9999px`. No `radius/xs` token.
+- Focus state: 2 px ring, 2 px offset.
+
+### Key semantic tokens (v4.2)
+
+| Token | Light | Dark |
+|---|---|---|
+| `--color-brand-primary` (CTA fill) | `#0F766E` Teal-700 | `#2DD4BF` |
+| `--color-border-brand` (logo/border) | `#0D9488` Teal-600 | `#2DD4BF` |
+| `--color-border-focus` | `#14B8A6` Teal-500 | `#5EEAD4` |
+| `--color-accent-default` | `#C2410C` Orange-700 | `#FB923C` |
+
+---
+
+## Component rules
+
+When creating or modifying any component:
+
+- Add TypeScript props. Never use `any`.
+- Use semantic tokens only — no raw hex in component files.
+- Support dark mode.
+- Support keyboard navigation when interactive.
+- Include loading, error, disabled, focus, hover, and pressed states when relevant.
+- Add `aria-label` for icon-only buttons.
+- Use visible labels for form controls.
+- Touch targets ≥ 48 × 48 px. Primary CTAs ≥ 56 × 48 px.
+- Framer Motion only for purposeful transitions. Always respect `prefers-reduced-motion`.
+
+---
+
+## i18n rules
+
+- Route through `/[locale]`.
+- Default locale: `es`. Supported: `es`, `en`.
+- Redirect `/` → `/es`.
+- Message files: `src/messages/es.json` and `src/messages/en.json`.
+- Keep message keys stable across updates.
+- Never merge a feature if one locale is missing required strings.
+- Spanish copy is the source; English follows with tone parity.
+
+---
+
+## Forms and privacy
+
+- Use react-hook-form + zod.
+- Put schemas in `src/lib/schemas/`.
+- Validate on blur and on submit.
+- Focus the first invalid field on submit.
+- Consent checkboxes default unchecked.
+- Never transmit pain scores, mood data, or health-sensitive details to analytics.
+- Do not implement medical diagnosis, AI triage, prescriptions, or emergency workflows unless explicitly scoped.
+
+---
+
+## PWA
+
+- Provide manifest metadata (raw hex is acceptable in manifest).
+- Add approved icons when assets are available.
+- Provide offline fallback or clear offline state before production handoff.
+- Never cache sensitive health data in unsafe storage.
+
+---
+
+## Logo and assets
+
+- Use SVG logo variants from `public/logos/`.
+- Primary Teal on light neutral surfaces.
+- Teal-300 on dark surfaces.
+- White on brand-colored or dark photo surfaces.
+- Original for full-color marketing.
+- Never stretch, skew, recolor, shadow, or rasterize the logo below target size.
+- Preserve the accented `Ó`.
+
+Expected logo files:
+
+```text
+public/logos/osteoplus-original-logo.svg
+public/logos/osteoplus-logo-white.svg
+public/logos/osteoplus-logo-teal-300.svg
+public/logos/osteoplus-logo-primary-teal.svg
+public/logos/osteoplus-logo-black.svg
+public/logos/favicon.svg
+```
+
+---
+
+## Git conventions
+
+Use conventional commits: `feat:`, `fix:`, `docs:`, `chore:`, `refactor:`, `test:`.
+
+Before opening or summarizing a PR, include:
+
+- What changed.
+- How it was tested.
+- Any skipped checks and why.
+- Accessibility, i18n, and dark-mode considerations.
+- Remaining TODOs.
+
+---
+
+## Initialization phases
+
+The project follows a phased plan (full details in `osteoplus-v2.9-detailed-plan.md`):
+
+0. **Preflight** — verify Node ≥ 20.9, pnpm, Git.
+1. **Protect existing folder** — backup, scaffold if needed, pin Next.js 15 + React 19.
+2. **Normalize source documents** — copy into `docs/` and `public/`.
+3. **Agent guidance** — place `AGENTS.md`, `CLAUDE.md`, `.cursorrules` at repo root.
+4. **Agent tooling** — configure Context7, UI UX Pro Max, 21st.dev Magic.
+5. **Dependencies** — install runtime and dev packages.
+6. **Scripts** — configure pnpm scripts.
+7. **Biome + TypeScript** — configure linting and strict TypeScript.
+8. **App structure** — create the `src/` directory tree.
+9. **Tailwind + tokens** — set up `globals.css` with v4.2 semantic tokens.
+10. **i18n** — routing, request config, starter messages in `es` and `en`.
+11. **Theme provider** — next-themes with class strategy.
+12. **PWA manifest** — metadata with approved icons.
+13. **Landing components** — hero, services, booking strip, trust, footer.
+14. **Testing + QA** — axe, Playwright, viewport checks, hex audit.
+15. **Validation** — `pnpm check && pnpm typecheck && pnpm test && pnpm build`.
+
+### Assumptions and missing inputs
+
+- Merriweather variable font may be missing — create `public/fonts/` and add a TODO.
+- Production clinic phone, booking backend URL, and analytics policy are not provided — use placeholders.
+- Supabase schema and API contracts are not provided — do not implement backend booking logic.
+- Do not implement full booking flow until backend/API scope is supplied.
+
+---
+
+## Minimum landing-page components
+
+```text
+src/components/brand/logo.tsx
+src/components/landing/hero.tsx
+src/components/landing/services-preview.tsx
+src/components/landing/booking-strip.tsx
+src/components/landing/trust-section.tsx
+src/components/landing/footer.tsx
+src/components/ui/button.tsx
+src/components/ui/theme-toggle.tsx
+src/components/ui/language-toggle.tsx
+```
+
+Content order on page:
+
+1. Header — logo + language/theme controls.
+2. Hero — Spanish-first copy + primary CTA.
+3. Service summary cards.
+4. Trust/accessibility section.
+5. Booking CTA strip.
+6. Footer — privacy/legal placeholders.
+
+---
+
+## Definition of done — initialization
+
+- [ ] Next.js pinned to 15.x
+- [ ] React and React DOM at 19.x
+- [ ] TypeScript strict enabled
+- [ ] pnpm lockfile exists
+- [ ] Biome configured
+- [ ] Tailwind v4 globals and semantic tokens present (v4.2 migration applied)
+- [ ] next-intl configured (Spanish default, English secondary)
+- [ ] next-themes configured (class strategy)
+- [ ] PWA manifest exists
+- [ ] `AGENTS.md`, `CLAUDE.md`, and `.cursorrules` exist in repo root
+- [ ] Source docs under `docs/project-source/`
+- [ ] Approved logos under `public/logos/`
+- [ ] `pnpm check`, `pnpm typecheck`, and `pnpm build` pass
+
+---
+
+## Definition of done — landing-page UI
+
+- [ ] `/es` and `/en` render successfully
+- [ ] Spanish and English content have parity
+- [ ] Dark and light modes are both usable
+- [ ] Page responsive at 320, 390, 768, 1024, and 1440 px widths
+- [ ] Primary CTA keyboard reachable and ≥ 56 × 48 px
+- [ ] All interactive targets ≥ 48 × 48 px
+- [ ] No placeholder-only inputs
+- [ ] No emoji
+- [ ] No raw hex in components
+- [ ] Axe smoke test — no serious or critical violations
+- [ ] Reduced-motion mode respected
+- [ ] Lighthouse targets documented and tracked (target ≥ 95 across all categories)
+
+---
+
+## Quick hex audit
+
+Verify no raw hex leaked into component files:
+
+```bash
+grep -R "#[0-9A-Fa-f]\{3,8\}" src/components src/app/\[locale\] || true
+```
+
+Expected: no matches.

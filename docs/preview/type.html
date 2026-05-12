@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Osteóplus — Typography</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin:0; padding:0; background:#fff; }
+  .stage { width: 880px; padding: 40px 48px; box-sizing: border-box; display: grid; grid-template-columns: 1.3fr 1fr; gap: 40px; }
+  .row { display: grid; grid-template-columns: 72px 1fr; gap: 16px; align-items: baseline; padding: 12px 0; border-bottom: 1px solid var(--slate-100); }
+  .row:last-child { border-bottom: 0; }
+  .tag { font-family: var(--font-mono); font-size: 10px; color: var(--slate-500); text-transform: uppercase; letter-spacing: .06em; }
+  .sec-title { font-family: var(--font-body); font-size: 11px; font-weight: 700; color: var(--slate-500); letter-spacing: .1em; text-transform: uppercase; margin: 0 0 12px; }
+  .sample-display { font-family: var(--font-display); font-weight: 700; font-size: 44px; line-height: 52px; color: var(--slate-900); letter-spacing: -0.01em; }
+  .sample-h2 { font-family: var(--font-display); font-weight: 700; font-size: 28px; line-height: 36px; color: var(--slate-900); }
+  .sample-h3 { font-family: var(--font-display); font-weight: 700; font-size: 22px; line-height: 30px; color: var(--slate-800); }
+  .sample-body-lg { font-family: var(--font-body); font-size: 18px; line-height: 28px; color: var(--slate-800); }
+  .sample-body { font-family: var(--font-body); font-size: 16px; line-height: 26px; color: var(--slate-800); }
+  .sample-sm { font-family: var(--font-body); font-size: 14px; line-height: 22px; color: var(--slate-700); }
+  .sample-cap { font-family: var(--font-body); font-size: 12px; line-height: 18px; color: var(--slate-500); }
+  .sample-label { font-family: var(--font-body); font-weight: 600; font-size: 13px; color: var(--slate-800); }
+  .sample-mono { font-family: var(--font-body); font-size: 13px; color: var(--slate-700); font-feature-settings: "tnum" 1; }
+  .fam { padding: 18px 20px; border: 1px solid var(--slate-200); border-radius: 12px; margin-bottom: 14px; }
+  .fam .k { font-family: var(--font-mono); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; color: var(--slate-500); }
+  .fam .name { font-size: 20px; color: var(--slate-900); margin-top: 4px; }
+  .fam.serif .name { font-family: var(--font-display); font-weight: 700; font-size: 28px; }
+  .fam.sans .name { font-family: var(--font-body); font-weight: 600; font-size: 22px; }
+  .fam.mono .name { font-family: var(--font-mono); font-weight: 500; font-size: 20px; }
+  .fam .use { font-family: var(--font-body); font-size: 12px; color: var(--slate-600); margin-top: 8px; }
+</style>
+</head>
+<body>
+<div class="stage">
+  <div>
+    <p class="sec-title">Type Scale</p>
+    <div class="row"><span class="tag">48/60</span><div class="sample-display">Gentle care</div></div>
+    <div class="row"><span class="tag">28/36</span><div class="sample-h2">Book your appointment today</div></div>
+    <div class="row"><span class="tag">22/30</span><div class="sample-h3">What to expect during your visit</div></div>
+    <div class="row"><span class="tag">18/28</span><div class="sample-body-lg">Our clinic specializes in gentle, evidence-based treatments tailored for older adults.</div></div>
+    <div class="row"><span class="tag">16/26</span><div class="sample-body">Each session is designed to improve mobility, reduce pain, and enhance your quality of life.</div></div>
+    <div class="row"><span class="tag">14/22</span><div class="sample-sm">Bring your referral letter if you have one — otherwise we'll assess together.</div></div>
+    <div class="row"><span class="tag">13/18</span><div class="sample-label">Phone number</div></div>
+    <div class="row"><span class="tag">12/18</span><div class="sample-cap">Last updated April 5, 2026 · ABN 12 345 678 901</div></div>
+    <div class="row"><span class="tag">11/16</span><div class="sample-mono">v2.3.1</div></div>
+  </div>
+
+  <div>
+    <p class="sec-title">Families</p>
+    <div class="fam serif">
+      <div class="k">Display &amp; Headings</div>
+      <div class="name">Merriweather Bold</div>
+      <div class="use">Editorial warmth; softens the clinical register. Reserved for titles.</div>
+    </div>
+    <div class="fam sans">
+      <div class="k">UI &amp; Body</div>
+      <div class="name">Inter · 400 / 500 / 600 / 700</div>
+      <div class="use">Body, labels, buttons, navigation, everything else.</div>
+    </div>
+    <div class="fam sans">
+      <div class="k">Data &amp; Numerics</div>
+      <div class="name">Inter · tabular nums</div>
+      <div class="use">Reuse Inter with <code style="font-family:var(--font-body);background:var(--slate-100);padding:1px 5px;border-radius:4px;">font-feature-settings: "tnum"</code> for codes, IDs, version strings. One family, fewer downloads.</div>
+    </div>
+    <p class="sec-title" style="margin-top:28px;">Rules</p>
+    <div class="sample-sm" style="color:var(--slate-700);">
+      • Min body size <b>14px</b> on mobile.<br>
+      • Line-heights are generous for 60+ readers.<br>
+      • Sentence case for UI chrome; Title Case only for marketing display.<br>
+      • Never ALL CAPS for emphasis — use weight or color.
+    </div>
+  </div>
+</div>
+</body>
+</html>

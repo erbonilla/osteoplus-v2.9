@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Osteóplus — Spacing, Radii, Shadow</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin:0; padding:0; background:#fff; }
+  .stage { width: 880px; padding: 40px 48px; box-sizing: border-box; }
+  .sec { margin-bottom: 32px; }
+  .sec h3 { margin: 0 0 14px; font-family: var(--font-body); font-size: 11px; font-weight: 700; color: var(--slate-500); letter-spacing: .1em; text-transform: uppercase; }
+
+  .space-row { display: grid; grid-template-columns: 56px 1fr 80px; align-items: center; gap: 12px; margin-bottom: 6px; }
+  .space-row .k { font-family: var(--font-mono); font-size: 11px; color: var(--slate-600); }
+  .space-row .px { font-family: var(--font-mono); font-size: 11px; color: var(--slate-500); text-align: right; }
+  .space-row .bar { background: var(--teal-500); height: 10px; border-radius: 2px; }
+
+  .radii { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; }
+  .r {
+    padding: 12px; text-align: center;
+    font-family: var(--font-mono); font-size: 10px; color: var(--slate-500);
+  }
+  .r .box {
+    height: 72px; background: var(--teal-50);
+    border: 1.5px solid var(--teal-600);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--teal-700); font-family: var(--font-body); font-weight: 600; font-size: 13px;
+    margin-bottom: 8px;
+  }
+
+  .shadows { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; padding: 8px 4px 20px; }
+  .sh { background: #fff; border-radius: 12px; height: 72px; display: flex; align-items: center; justify-content: center; font-family: var(--font-body); font-size: 12px; font-weight: 600; color: var(--slate-700); }
+  .sh.xs { box-shadow: var(--shadow-xs); border: 1px solid var(--slate-100); }
+  .sh.sm { box-shadow: var(--shadow-sm); }
+  .sh.md { box-shadow: var(--shadow-md); }
+  .sh.lg { box-shadow: var(--shadow-lg); }
+  .sh-lbl { text-align: center; font-family: var(--font-mono); font-size: 10px; color: var(--slate-500); margin-top: 10px; }
+
+  .motion { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .motion .m { border: 1px solid var(--slate-200); border-radius: 10px; padding: 14px 16px; }
+  .motion .m .d { font-family: var(--font-body); font-weight: 700; color: var(--slate-900); font-size: 16px; }
+  .motion .m .u { font-family: var(--font-mono); font-size: 10px; color: var(--slate-500); margin-top: 4px; }
+  .motion .m .ease { margin-top: 10px; height: 6px; background: linear-gradient(90deg, var(--teal-200) 0%, var(--teal-600) 100%); border-radius: 3px; }
+
+  .touch { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; align-items: end; }
+  .touch .t { border: 1px dashed var(--slate-300); border-radius: 10px; padding: 12px; display: flex; flex-direction: column; align-items: center; gap: 10px; background: var(--slate-50); }
+  .touch .chip { background: var(--teal-600); color: #fff; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-family: var(--font-body); font-weight: 700; font-size: 14px; }
+  .touch .lbl { font-family: var(--font-mono); font-size: 10px; color: var(--slate-500); }
+  .chip.s32 { width: 32px; height: 32px; font-size: 11px; }
+  .chip.s48 { width: 48px; height: 48px; }
+  .chip.s56 { width: 56px; height: 56px; font-size: 16px; }
+
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="cols">
+    <div class="sec">
+      <h3>Spacing — 4px grid</h3>
+      <div class="space-row"><span class="k">space/1</span><div class="bar" style="width: 4px;"></div><span class="px">4</span></div>
+      <div class="space-row"><span class="k">space/2</span><div class="bar" style="width: 8px;"></div><span class="px">8</span></div>
+      <div class="space-row"><span class="k">space/3</span><div class="bar" style="width: 12px;"></div><span class="px">12</span></div>
+      <div class="space-row"><span class="k">space/4</span><div class="bar" style="width: 16px;"></div><span class="px">16</span></div>
+      <div class="space-row"><span class="k">space/5</span><div class="bar" style="width: 20px;"></div><span class="px">20</span></div>
+      <div class="space-row"><span class="k">space/6</span><div class="bar" style="width: 24px;"></div><span class="px">24</span></div>
+      <div class="space-row"><span class="k">space/8</span><div class="bar" style="width: 32px;"></div><span class="px">32</span></div>
+      <div class="space-row"><span class="k">space/10</span><div class="bar" style="width: 40px;"></div><span class="px">40</span></div>
+      <div class="space-row"><span class="k">space/12</span><div class="bar" style="width: 48px;"></div><span class="px">48</span></div>
+      <div class="space-row"><span class="k">space/16</span><div class="bar" style="width: 64px;"></div><span class="px">64</span></div>
+      <div class="space-row"><span class="k">space/20</span><div class="bar" style="width: 80px;"></div><span class="px">80</span></div>
+      <div class="space-row"><span class="k">space/24</span><div class="bar" style="width: 96px;"></div><span class="px">96</span></div>
+    </div>
+    <div class="sec">
+      <h3>Touch targets — 60+ accessibility</h3>
+      <div class="touch">
+        <div class="t"><div class="chip s32">32</div><div class="lbl">Decorative only</div></div>
+        <div class="t"><div class="chip s48">48</div><div class="lbl">Minimum</div></div>
+        <div class="t"><div class="chip s56">56</div><div class="lbl">Primary CTA</div></div>
+      </div>
+
+      <h3 style="margin-top:28px;">Motion</h3>
+      <div class="motion">
+        <div class="m"><div class="d">120ms</div><div class="u">--dur-fast</div><div class="ease"></div></div>
+        <div class="m"><div class="d">200ms</div><div class="u">--dur-base</div><div class="ease"></div></div>
+        <div class="m"><div class="d">320ms</div><div class="u">--dur-slow</div><div class="ease"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h3>Corner radii</h3>
+    <div class="radii">
+      <div class="r"><div class="box" style="border-radius: 2px;">2</div>radius/xs</div>
+      <div class="r"><div class="box" style="border-radius: 4px;">4</div>radius/sm</div>
+      <div class="r"><div class="box" style="border-radius: 8px;">8</div>radius/md</div>
+      <div class="r"><div class="box" style="border-radius: 12px;">12</div>radius/lg</div>
+      <div class="r"><div class="box" style="border-radius: 16px;">16</div>radius/xl</div>
+      <div class="r"><div class="box" style="border-radius: 9999px;">full</div>radius/full</div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h3>Shadows — used sparingly; system is border-first</h3>
+    <div class="shadows">
+      <div><div class="sh xs">xs</div><div class="sh-lbl">shadow/xs</div></div>
+      <div><div class="sh sm">sm</div><div class="sh-lbl">shadow/sm</div></div>
+      <div><div class="sh md">md</div><div class="sh-lbl">shadow/md</div></div>
+      <div><div class="sh lg">lg</div><div class="sh-lbl">shadow/lg</div></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Osteóplus — Icons &amp; Nav</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  html, body { margin:0; padding:0; background:#fff; }
+  .stage { width: 880px; padding: 40px 48px; box-sizing: border-box; }
+  h3 { margin: 0 0 14px; font-family: var(--font-body); font-size: 11px; font-weight: 700; color: var(--slate-500); letter-spacing: .1em; text-transform: uppercase; }
+  .sec { margin-bottom: 28px; }
+  .icons { display: grid; grid-template-columns: repeat(12, 1fr); gap: 12px; }
+  .ico { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 10px 6px; border-radius: 10px; border: 1px solid var(--slate-100); }
+  .ico svg { width: 24px; height: 24px; color: var(--slate-700); stroke-width: 1.5; }
+  .ico .n { font-family: var(--font-mono); font-size: 9px; color: var(--slate-500); text-align: center; }
+
+  /* Bottom tab bar */
+  .tabbar { width: 390px; height: 72px; border: 1px solid var(--slate-200); background: #fff; display: flex; margin-bottom: 8px; border-radius: 12px; overflow: hidden; }
+  .tab { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; position: relative; padding-top: 6px; }
+  .tab .ind { position: absolute; top: 8px; width: 32px; height: 3px; border-radius: 2px; background: var(--teal-600); opacity: 0; }
+  .tab.active .ind { opacity: 1; }
+  .tab svg { width: 24px; height: 24px; color: var(--slate-400); stroke-width: 1.5; }
+  .tab.active svg { color: var(--teal-600); }
+  .tab .l { font-family: var(--font-body); font-size: 11px; color: var(--slate-500); font-weight: 500; }
+  .tab.active .l { color: var(--teal-700); font-weight: 700; }
+
+  /* Top app bar */
+  .appbar { width: 390px; height: 56px; border: 1px solid var(--slate-200); border-radius: 12px; background: #fff; display: flex; align-items: center; padding: 0 12px; gap: 8px; margin-bottom: 16px; }
+  .appbar .title { flex: 1; text-align: center; font-family: var(--font-display); font-weight: 700; font-size: 16px; color: var(--slate-900); }
+  .appbar .ib { width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 8px; color: var(--slate-700); }
+  .appbar .ib svg { width: 22px; height: 22px; stroke-width: 1.5; }
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="sec">
+    <h3>Iconography — Lucide · 24px · 1.5 stroke · round caps</h3>
+    <div class="icons">
+      <div class="ico"><i data-lucide="house"></i><span class="n">house</span></div>
+      <div class="ico"><i data-lucide="calendar"></i><span class="n">calendar</span></div>
+      <div class="ico"><i data-lucide="clock"></i><span class="n">clock</span></div>
+      <div class="ico"><i data-lucide="map-pin"></i><span class="n">map-pin</span></div>
+      <div class="ico"><i data-lucide="phone"></i><span class="n">phone</span></div>
+      <div class="ico"><i data-lucide="mail"></i><span class="n">mail</span></div>
+      <div class="ico"><i data-lucide="message-circle"></i><span class="n">message</span></div>
+      <div class="ico"><i data-lucide="bell"></i><span class="n">bell</span></div>
+      <div class="ico"><i data-lucide="user-round"></i><span class="n">user</span></div>
+      <div class="ico"><i data-lucide="stethoscope"></i><span class="n">stethoscope</span></div>
+      <div class="ico"><i data-lucide="clipboard-plus"></i><span class="n">clipboard</span></div>
+      <div class="ico"><i data-lucide="pill-bottle"></i><span class="n">pill</span></div>
+      <div class="ico"><i data-lucide="brain"></i><span class="n">brain</span></div>
+      <div class="ico"><i data-lucide="heart"></i><span class="n">heart</span></div>
+      <div class="ico"><i data-lucide="person-standing"></i><span class="n">standing</span></div>
+      <div class="ico"><i data-lucide="wheelchair"></i><span class="n">wheelchair</span></div>
+      <div class="ico"><i data-lucide="flame" style="color:var(--orange-500);"></i><span class="n">flame</span></div>
+      <div class="ico"><i data-lucide="zap" style="color:var(--orange-500);"></i><span class="n">zap</span></div>
+      <div class="ico"><i data-lucide="trophy" style="color:var(--orange-500);"></i><span class="n">trophy</span></div>
+      <div class="ico"><i data-lucide="check"></i><span class="n">check</span></div>
+      <div class="ico"><i data-lucide="plus"></i><span class="n">plus</span></div>
+      <div class="ico"><i data-lucide="arrow-right"></i><span class="n">arrow-right</span></div>
+      <div class="ico"><i data-lucide="arrow-left"></i><span class="n">arrow-left</span></div>
+      <div class="ico"><i data-lucide="settings"></i><span class="n">settings</span></div>
+    </div>
+  </div>
+
+  <div class="cols">
+    <div class="sec">
+      <h3>Top app bar</h3>
+      <div class="appbar">
+        <div class="ib"><i data-lucide="arrow-left"></i></div>
+        <div class="title">Book appointment</div>
+        <div class="ib"><i data-lucide="search"></i></div>
+      </div>
+      <div class="appbar">
+        <div class="ib"><i data-lucide="menu"></i></div>
+        <div class="title" style="text-align:left;">Hola, Carme</div>
+        <div class="ib"><i data-lucide="bell"></i></div>
+      </div>
+    </div>
+    <div class="sec">
+      <h3>Bottom tab bar · 4 tabs · lg (72h)</h3>
+      <div class="tabbar">
+        <div class="tab active"><div class="ind"></div><i data-lucide="house"></i><span class="l">Home</span></div>
+        <div class="tab"><div class="ind"></div><i data-lucide="calendar"></i><span class="l">Appointments</span></div>
+        <div class="tab"><div class="ind"></div><i data-lucide="flame"></i><span class="l">The Loop</span></div>
+        <div class="tab"><div class="ind"></div><i data-lucide="user-round"></i><span class="l">Profile</span></div>
+      </div>
+      <div class="tabbar" style="height: 64px;">
+        <div class="tab"><div class="ind"></div><i data-lucide="house"></i><span class="l">Home</span></div>
+        <div class="tab active"><div class="ind"></div><i data-lucide="calendar"></i><span class="l">Appointments</span></div>
+        <div class="tab"><div class="ind"></div><i data-lucide="flame"></i><span class="l">The Loop</span></div>
+        <div class="tab"><div class="ind"></div><i data-lucide="user-round"></i><span class="l">Profile</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>lucide.createIcons();</script>
+</body>
+</html>

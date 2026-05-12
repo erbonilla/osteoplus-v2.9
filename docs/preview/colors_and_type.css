@@ -1,0 +1,301 @@
+/* =============================================================
+   Osteóplus — Foundations
+   Library v2.1 · snapshot 2026-05-07
+   Colors, Typography, Spacing, Radii, Shadows, Motion
+   WCAG 2.2 AA baseline. Optimized for 60+ readability.
+
+   v2.1 migration notes (from DESIGN.md / COMPONENT_AUDIT.md):
+   - `color/brand/primary` filled CTA  ⇒ teal-700 (#0F766E)   [was teal-600]
+   - `color/border/brand` borders/icons ⇒ teal-600 (#0D9488)   [interactive teal]
+   - `color/accent/default`            ⇒ orange-700 (#C2410C) [was #FF6B00]
+   - `color/border/focus`              ⇒ teal-500 (#14B8A6)
+   Legacy aliases (`--brand` etc) are kept and now point to the new canonical
+   values; existing UI kits will pick up the migration automatically.
+   ============================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* Brand font — Merriweather (variable, uploaded by brand team) */
+@font-face {
+  font-family: 'Merriweather';
+  src: url('fonts/Merriweather-VariableFont_opsz_wdth_wght.ttf') format('truetype-variations'),
+       url('fonts/Merriweather-VariableFont_opsz_wdth_wght.ttf') format('truetype');
+  font-weight: 300 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Merriweather';
+  src: url('fonts/Merriweather-Italic-VariableFont_opsz_wdth_wght.ttf') format('truetype-variations'),
+       url('fonts/Merriweather-Italic-VariableFont_opsz_wdth_wght.ttf') format('truetype');
+  font-weight: 300 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  /* ---------- PRIMITIVES — Primary Teal ---------- */
+  --teal-50:  #F0FDFA;
+  --teal-100: #CCFBF1;
+  --teal-200: #99F6E4;
+  --teal-300: #5EEAD4;
+  --teal-400: #2DD4BF;
+  --teal-500: #14B8A6;
+  --teal-600: #0D9488; /* brand base */
+  --teal-700: #0F766E;
+  --teal-800: #115E59;
+  --teal-900: #134E4A;
+  --teal-950: #042F2E;
+
+  /* ---------- PRIMITIVES — Accent Orange ---------- */
+  --orange-50:  #FFF7ED;
+  --orange-100: #FFEDD5;
+  --orange-200: #FED7AA;
+  --orange-300: #FDBA74;
+  --orange-400: #FB923C;
+  --orange-500: #FF6B00; /* accent base */
+  --orange-600: #EA580C;
+  --orange-700: #C2410C;
+  --orange-800: #9A3412;
+  --orange-900: #7C2D12;
+  --orange-950: #431407;
+
+  /* ---------- PRIMITIVES — Neutral Slate ---------- */
+  --slate-50:  #F8FAFC;
+  --slate-100: #F1F5F9;
+  --slate-200: #E2E8F0;
+  --slate-300: #CBD5E1;
+  --slate-400: #94A3B8; /* ⚠ 3.0:1 — decorative only */
+  --slate-500: #64748B;
+  --slate-600: #475569;
+  --slate-700: #334155;
+  --slate-800: #1E293B;
+  --slate-900: #0F172A;
+  --slate-950: #020617;
+
+  /* ---------- PRIMITIVES — Feedback ---------- */
+  --success-subtle: #F0FDF4;
+  --success-base:   #16A34A;
+  --success-strong: #166534;
+
+  --warning-subtle: #FFFBEB;
+  --warning-base:   #D97706;
+  --warning-strong: #92400E;
+
+  --error-subtle:   #FFF1F2;
+  --error-base:     #E11D48;
+  --error-strong:   #9F1239;
+
+  --info-subtle:    #EFF6FF;
+  --info-base:      #2563EB;
+  --info-strong:    #1E40AF;
+
+  /* ---------- SEMANTIC TOKENS — Light (default) ---------- */
+  --bg:              #FFFFFF;
+  --bg-subtle:       var(--slate-50);
+  --bg-muted:        var(--slate-100);
+
+  --surface:         #FFFFFF;
+  --surface-raised:  #FFFFFF;
+
+  --text:            var(--slate-900);
+  --text-secondary:  var(--slate-700);
+  --text-muted:      var(--slate-500);
+  --text-on-brand:   #FFFFFF;
+
+  --border:          var(--slate-200);
+  --border-strong:   var(--slate-300);
+  --border-focus:    var(--teal-500);   /* #14B8A6 — v2.1 focus token       */
+
+  /* Brand — filled CTAs, primary emphasis (v2.1: teal-700 canonical) */
+  --brand:           var(--teal-700);   /* #0F766E — color/brand/primary    */
+  --brand-hover:     var(--teal-700);   /* matches DESIGN.md hover state    */
+  --brand-pressed:   var(--teal-800);   /* #115E59 — color/brand/primary-active */
+  --brand-subtle:    var(--teal-100);   /* #CCFBF1 — color/brand/subtle     */
+  --brand-strong:    var(--teal-800);   /* #115E59 — color/text/brand-strong */
+  --brand-ring:      rgba(20,184,166,0.30);
+
+  /* Interactive teal — borders, icon emphasis, legacy specimens */
+  --border-brand:    var(--teal-600);   /* #0D9488 — color/border/brand     */
+  --interactive:     var(--teal-600);   /* alias for icon/legacy use        */
+
+  /* Accent — sparing secondary emphasis (v2.1: orange-700 canonical) */
+  --accent:          var(--orange-700); /* #C2410C — color/accent/default   */
+  --accent-hover:    var(--orange-600); /* #EA580C — color/accent/hover     */
+  --accent-pressed:  var(--orange-700); /* color/accent/active              */
+  --accent-subtle:   var(--orange-50);
+
+  /* ---------- TYPOGRAPHY ---------- */
+  --font-display: 'Merriweather', Georgia, 'Times New Roman', serif;
+  --font-body:    'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+  /* Type scale — v2.1 canonical names */
+  --fs-display-5xl: 48px; --lh-display-5xl: 56px;  /* was display 48/60 */
+  --fs-heading-xl:  36px; --lh-heading-xl:  44px;  /* NEW v2.1          */
+  --fs-heading-lg:  30px; --lh-heading-lg:  40px;
+  --fs-heading-md:  24px; --lh-heading-md:  32px;  /* was 24/34         */
+  --fs-heading-sm:  20px; --lh-heading-sm:  28px;  /* was 20/30         */
+  --fs-heading-xs:  18px; --lh-heading-xs:  24px;  /* NEW v2.1          */
+  --fs-body-lg:     18px; --lh-body-lg:     28px;
+  --fs-body-md:     16px; --lh-body-md:     24px;  /* was 16/26         */
+  --fs-body-sm:     14px; --lh-body-sm:     22px;
+  --fs-body-xs:     12px; --lh-body-xs:     16px;  /* was caption 12/18 */
+
+  /* Legacy aliases (do not remove — used by existing UI kits / preview cards) */
+  --fs-display:    var(--fs-display-5xl); --lh-display:    var(--lh-display-5xl);
+  --fs-body:       var(--fs-body-md);     --lh-body:       var(--lh-body-md);
+  --fs-caption:    var(--fs-body-xs);     --lh-caption:    var(--lh-body-xs);
+
+  /* UI text — labels & overlines */
+  --fs-label-lg:   16px; --lh-label-lg:   24px;
+  --fs-label-md:   14px; --lh-label-md:   20px;
+  --fs-label-sm:   12px; --lh-label-sm:   16px;
+  --fs-overline:   11px; --lh-overline:   16px; --tracking-overline: 0.08em;
+
+  /* Legacy button/label/badge aliases */
+  --fs-button-lg:  var(--fs-label-lg); --lh-button-lg: var(--lh-label-lg);
+  --fs-button:     var(--fs-label-md); --lh-button:    var(--lh-label-md);
+  --fs-label:      var(--fs-label-md); --lh-label:     var(--lh-label-md);
+  --fs-badge:      var(--fs-label-sm); --lh-badge:     var(--lh-label-sm);
+
+  /* ---------- SPACING — 4px grid (v2.1 semantic + numeric) ---------- */
+  --space-xs:   4px;
+  --space-sm:   8px;
+  --space-md:  16px;
+  --space-lg:  24px;
+  --space-xl:  32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+
+  /* Numeric aliases (legacy / fine-grained) */
+  --space-0:   0;
+  --space-1:   4px;
+  --space-2:   8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+
+  /* ---------- RADII (v2.1 semantic + scale) ---------- */
+  --radius-button: 8px;   /* radius/button — buttons + inputs */
+  --radius-input:  8px;   /* radius/input                     */
+  --radius-badge:  6px;   /* radius/badge — chips, badges     */
+  --radius-card:  12px;   /* radius/card  — cards, modals     */
+  --radius-pill: 9999px;  /* radius/pill  — fully rounded     */
+
+  /* Scale aliases (legacy / utility) */
+  --radius-xs:   2px;
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-lg:  12px;
+  --radius-xl:  16px;
+  --radius-full: 9999px;
+
+  /* ---------- SHADOWS (subtle; this system uses borders more than shadows) ---------- */
+  --shadow-xs:  0 1px 2px rgba(15,23,42,0.04);
+  --shadow-sm:  0 1px 3px rgba(15,23,42,0.08), 0 1px 2px rgba(15,23,42,0.04);
+  --shadow-md:  0 4px 12px rgba(15,23,42,0.08);
+  --shadow-lg:  0 10px 24px rgba(15,23,42,0.10);
+  --shadow-focus: 0 0 0 3px var(--brand-ring);
+
+  /* ---------- TOUCH TARGETS (60+ accessibility) ---------- */
+  --touch-min:    48px; /* non-negotiable minimum */
+  --touch-lg:     56px; /* primary CTAs */
+
+  /* ---------- MOTION ---------- */
+  --ease-out:     cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-in-out:  cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-fast:     120ms;
+  --dur-base:     200ms;
+  --dur-slow:     320ms;
+}
+
+/* ---------- DARK MODE (v2.1) ---------- */
+[data-theme="dark"] {
+  --bg:             var(--slate-900);   /* #0F172A  bg/primary-dark    */
+  --bg-subtle:      var(--slate-800);   /* #1E293B  bg/secondary-dark  */
+  --bg-muted:       var(--slate-700);   /* #334155  bg/tertiary-dark   */
+  --surface:        var(--slate-800);   /* surface/card-dark           */
+  --surface-raised: var(--slate-600);   /* #475569  surface/elevated-dark */
+  --text:           var(--slate-50);    /* text/primary-dark           */
+  --text-secondary: var(--slate-300);   /* text/secondary-dark         */
+  --text-muted:     var(--slate-300);   /* tertiary maps to slate-300  */
+  --border:         var(--slate-600);   /* border/default-dark         */
+  --border-strong:  var(--slate-500);
+  --border-focus:   var(--teal-300);    /* #5EEAD4  border/focus-dark  */
+  --brand:          var(--teal-400);    /* #2DD4BF  brand/primary-dark */
+  --brand-hover:    var(--teal-300);    /* #5EEAD4                     */
+  --brand-pressed:  var(--teal-200);    /* #99F6E4                     */
+  --brand-subtle:   var(--teal-900);    /* #134E4A                     */
+  --brand-strong:   var(--teal-300);    /* text/brand-strong-dark      */
+  --border-brand:   var(--teal-500);
+}
+
+/* ============================================================
+   SEMANTIC CLASSES
+   ============================================================ */
+html, body { background: var(--bg); color: var(--text); }
+body {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, .h-display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-display);
+  line-height: var(--lh-display);
+  color: var(--slate-900);
+  letter-spacing: -0.01em;
+}
+h2, .h-lg {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-heading-lg);
+  line-height: var(--lh-heading-lg);
+  color: var(--slate-800);
+}
+h3, .h-md {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-heading-md);
+  line-height: var(--lh-heading-md);
+  color: var(--slate-800);
+}
+h4, .h-sm {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-heading-sm);
+  line-height: var(--lh-heading-sm);
+  color: var(--slate-800);
+}
+
+.body-lg  { font-size: var(--fs-body-lg); line-height: var(--lh-body-lg); color: var(--slate-800); }
+.body     { font-size: var(--fs-body);    line-height: var(--lh-body);    color: var(--slate-800); }
+.body-sm  { font-size: var(--fs-body-sm); line-height: var(--lh-body-sm); color: var(--slate-700); }
+.caption  { font-size: var(--fs-caption); line-height: var(--lh-caption); color: var(--slate-400); }
+
+.label-lg { font-family: var(--font-body); font-weight: 600; font-size: var(--fs-label-lg); line-height: var(--lh-label-lg); color: var(--slate-800); }
+.label    { font-family: var(--font-body); font-weight: 600; font-size: var(--fs-label);    line-height: var(--lh-label);    color: var(--slate-800); }
+.badge-t  { font-family: var(--font-body); font-weight: 600; font-size: var(--fs-badge);    line-height: var(--lh-badge);    letter-spacing: 0.01em; }
+
+code, .mono { font-family: var(--font-mono); font-size: 13px; }
+
+/* ============================================================
+   FOCUS — always visible, brand ring, 60+ friendly
+   ============================================================ */
+:where(button, a, input, select, textarea, [tabindex]):focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+  border-radius: var(--radius-md);
+}
