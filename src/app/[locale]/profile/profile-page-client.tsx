@@ -15,11 +15,22 @@ import type { Locale } from "@/i18n/routing";
 
 type ProfilePageClientProps = {
   locale: Locale;
+  initialSection?: ProfileSectionId;
+  enableSectionQuerySync?: boolean;
 };
 
-export function ProfilePageClient({ locale }: ProfilePageClientProps) {
+export function ProfilePageClient({
+  locale,
+  initialSection = "personal-info",
+  enableSectionQuerySync = true,
+}: ProfilePageClientProps) {
   return (
-    <ProfileLayout locale={locale} userName="Ana García">
+    <ProfileLayout
+      locale={locale}
+      userName="Ana García"
+      enableSectionQuerySync={enableSectionQuerySync}
+      initialSection={initialSection}
+    >
       {(activeSection: ProfileSectionId) => {
         switch (activeSection) {
           case "personal-info":

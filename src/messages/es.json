@@ -538,6 +538,7 @@
     },
     "recovery": {
       "breadcrumb": "Perfil / Recuperación",
+      "breadcrumbParent": "Perfil",
       "title": "Recuperación",
       "description": "Objetivos, hitos y plan de tratamiento actual.",
       "goals": {

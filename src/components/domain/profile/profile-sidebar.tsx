@@ -3,6 +3,7 @@
 import { Activity, Bell, BookHeart, Clock, Eye, Lock, Star, User, Users } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Divider } from "@/components/ui/divider";
+import type { Locale } from "@/i18n/routing";
 import { cn } from "@/lib/utils/cn";
 import { ProfileSideNavItem } from "./profile-side-nav-item";
 
@@ -18,13 +19,21 @@ export type ProfileSectionId =
   | "favorites";
 
 type ProfileSidebarProps = {
+  locale: Locale;
   activeSection: ProfileSectionId;
-  onSectionChange: (id: ProfileSectionId) => void;
+  onSectionSelect: (id: ProfileSectionId) => void;
   className?: string;
 };
 
-export function ProfileSidebar({ activeSection, onSectionChange, className }: ProfileSidebarProps) {
+export function ProfileSidebar({
+  locale,
+  activeSection,
+  onSectionSelect,
+  className,
+}: ProfileSidebarProps) {
   const t = useTranslations("profile.nav");
+
+  const recoveryHref = `/${locale}/profile/recovery`;
 
   const group1 = [
     { id: "personal-info" as const, label: t("personalInfo"), icon: User },
@@ -45,7 +54,7 @@ export function ProfileSidebar({ activeSection, onSectionChange, className }: Pr
     <nav
       aria-label={t("aria")}
       className={cn(
-        "flex w-64 shrink-0 flex-col gap-1 overflow-y-auto border-r border-border-default bg-surface-card px-2 py-4",
+        "flex w-[260px] shrink-0 flex-col gap-1 overflow-y-auto border-r border-border-default bg-surface-card px-2 py-4",
         className,
       )}
     >
@@ -58,7 +67,7 @@ export function ProfileSidebar({ activeSection, onSectionChange, className }: Pr
             label={item.label}
             icon={item.icon}
             isActive={activeSection === item.id}
-            onClick={(id) => onSectionChange(id as ProfileSectionId)}
+            onSelect={(sid) => onSectionSelect(sid as ProfileSectionId)}
           />
         ))}
       </div>
@@ -67,16 +76,27 @@ export function ProfileSidebar({ activeSection, onSectionChange, className }: Pr
 
       {/* Group 2 */}
       <div className="flex flex-col gap-0.5">
-        {group2.map((item) => (
-          <ProfileSideNavItem
-            key={item.id}
-            id={item.id}
-            label={item.label}
-            icon={item.icon}
-            isActive={activeSection === item.id}
-            onClick={(id) => onSectionChange(id as ProfileSectionId)}
-          />
-        ))}
+        {group2.map((item) =>
+          item.id === "recovery" ? (
+            <ProfileSideNavItem
+              key={item.id}
+              id={item.id}
+              label={item.label}
+              icon={item.icon}
+              isActive={activeSection === item.id}
+              href={recoveryHref}
+            />
+          ) : (
+            <ProfileSideNavItem
+              key={item.id}
+              id={item.id}
+              label={item.label}
+              icon={item.icon}
+              isActive={activeSection === item.id}
+              onSelect={(sid) => onSectionSelect(sid as ProfileSectionId)}
+            />
+          ),
+        )}
       </div>
     </nav>
   );

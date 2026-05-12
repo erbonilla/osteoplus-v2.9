@@ -538,6 +538,7 @@
     },
     "recovery": {
       "breadcrumb": "Profile / Recovery",
+      "breadcrumbParent": "Profile",
       "title": "Recovery",
       "description": "Goals, milestones, and current treatment plan.",
       "goals": {
